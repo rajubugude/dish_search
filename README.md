@@ -6,4 +6,5 @@
 * I performed a search functionality based on the dish name and fetched all the restaurants and prices of the dish.
 
 
-![WhatsApp Image 2022-03-11 at 9 42 52 PM](C:\Users\Admin\OneDrive\Pictures\Screenshots\Screenshot (106).png)
+
+![Screenshot (106)](https://github.com/rajubugude/dish_search/assets/88735632/22a8e98c-75f1-4ceb-a428-eb877109180b)
