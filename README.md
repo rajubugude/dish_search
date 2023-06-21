@@ -1,4 +1,4 @@
-## Dish_Search
+## Dish Search
 
 ### This is a Django Backend project. 
 * This project includes reading data from a .csv file with massive data on restaurants in a city. 
