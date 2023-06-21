@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from .models import Restaurant
-import json
 
 def search(request):
     if request.method == 'POST':
