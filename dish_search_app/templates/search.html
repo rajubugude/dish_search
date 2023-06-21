@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dish Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <h3>Dish Search</h3>
+            <form class="d-flex mx-auto" action="{% url 'search' %}"  method="POST">
+                {% csrf_token %}
+                <input class="form-control me-2" type="search" name="query" placeholder="Search Your Dish Here" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            
+        </div>
+    </nav>
+
+
+    {% if query %}
+    {% if restaurants %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h3 class="text-center">Search Results for "{{ query }}"</h3>
+                </div>
+            </div>
+            {% for restaurant_data in restaurants %}
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6">
+                        <h4>{{ restaurant_data.restaurant.name }}</h4>
+                        <ul class="list-group">
+                            {% for dish_data in restaurant_data.dishes %}
+                                <li class="list-group-item">{{ dish_data.dish }} - Price: {{ dish_data.price }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <p class="text-center">No results found for "{{ query }}".</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endif %}
+
+
+
+
+</body>
+</html>
+
+
