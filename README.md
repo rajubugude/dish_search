@@ -1,4 +1,5 @@
-## dish_search
+## Dish_Search
+
 ### This is a Django framework project. 
 * This project includes reading data from a .csv file which has a very big data of restaurants in a city. 
 * Stored all the data in database from ths .csv file, which is provided by django as a default i.e, sqlite3
